@@ -1,0 +1,10 @@
+
+const documentValidation = await DocumentValidation.deployed();
+await documentValidation.registerDocument("4e4f2c5f6a1e2b2dbf8b3d37d1a1576a57e4f7e1ab0a3f0a10f7fe8a7d7bcf8c", "Documento Exemplo");
+
+const docs = await documentValidation.getDocuments();
+console.log(docs);
+
+let result = await documentValidation.verifyDocument("4e4f2c5f6a1e2b2dbf8b3d37d1a1576a57e4f7e1ab0a3f0a10f7fe8a7d7bcf8c");
+result = await documentValidation.verifyDocument("e4f2c5f6a1e2b2dbf8b3d37d1a1576a57e4f7e1ab0a3f0a10f7fe8a7d7bcf8c");
+console.log(result);
